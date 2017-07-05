@@ -87,9 +87,6 @@ function discover_compute_nodes {
         sleep 10
     done
 
-    echo "Registering flavors in nova"
-    time kayobe playbook run ansible/compute-node-flavors.yml
-
     echo "Providing compute nodes"
     time kayobe playbook run ansible/compute-node-provide.yml
 }
