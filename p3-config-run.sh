@@ -16,8 +16,12 @@ if [[ -z ${OS_AUTH_URL} ]]; then
     exit 1
 fi
 
-echo "Running p3-config"
 cd ${P3C_PATH}
+
+echo "Running p3-config for P3 project"
+./tools/p3-config -p ansible/p3-project.yml
+
+echo "Running p3-config for everything"
 ./tools/p3-config
 
 echo "Successfully ran p3-config"
